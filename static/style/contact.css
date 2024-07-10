@@ -1,0 +1,320 @@
+.con{
+    position: relative;
+}
+
+.con>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 62%;
+    z-index: -1;
+}
+
+.banner{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    padding: 1.5% 0;
+}
+
+.banner div{
+    display: flex;
+    align-items: center;
+}
+
+.banner div h1{
+    font-size: 60px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--main-color);
+}
+
+.banner div img{
+    width: 50px;
+    height: auto;
+    margin: 10px;
+}
+
+.banner div img.rotate{
+    transform: rotate(180deg);
+}
+
+.banner p.hr{
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.banner p{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.hero{
+    width: 100%;
+    margin: 0;
+    padding: 0 20%;
+    position: relative;
+}
+
+.hero .form{
+    position: relative;
+    width: 71%;
+    background: var(--sub-color);
+    padding: 3% 12% 5% 2.5%;
+    border-radius: 2px;
+}
+
+.hero .form form{
+    width: 100%;
+}
+
+.hero .form form input[type=text], .hero .form form input[type=email]{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+    margin: 4px 0;
+    outline-style: none;
+    border-radius: 1px;
+}
+
+.hero .form form textarea{
+    width: 100% !important;
+    padding: 10px;
+    margin: 4px 0 0;
+    outline-style: none;
+    border: none;
+    border-radius: 1px;
+    height: 110px;
+    font-size: 13px;
+}
+
+.hero .form form input[type=submit]{
+    border: 1px solid var(--main-color);
+    background: var(--main-color);
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: var(--bg-color);
+    cursor: pointer;
+    font-size: 15px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.hero .form form input[type=submit]:hover{
+    background: var(--bg-color);
+    color: var(--main-color);
+}
+
+.hero .n-form{
+    width: 280px;
+    position: absolute;
+    right: 370px;
+    top: 80px;
+    height: fit-content;
+}
+
+.hero .n-form .pos-3{
+    border: 1px solid var(--main-color);
+    padding: 20px 17px;
+    background: var(--bg-sub-color);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.hero .n-form .pos-4{
+    width: 100%;
+    border: 1px solid var(--main-color);
+    background: var(--bg-sub-color);
+    padding: 25px 30px;
+    margin: 10px 0;
+}
+
+.hero .n-form .pos-4 p{
+    font-size: 13px;
+    margin: 0 0 15px;
+    color: var(--main-color);
+}
+
+.hero .n-form .pos-4 p:nth-child(3){
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero .n-form .pos-4 p i{
+    font-size: 15px;
+}
+
+.hero .n-form .pos-4 div{
+    margin: 10px 0 0;
+    position: relative;
+}
+
+.hero .n-form .pos-4 div img{
+    width: 220px;
+    height: auto;
+}
+
+.hero .n-form .pos-4 div i{
+    position: absolute;
+    top: 0;
+}
+
+.hero .n-form .pos-4 div i:nth-child(1){
+    top: 15px;
+    left: 120px;
+}
+
+.hero .n-form .pos-4 div i:nth-child(2){
+    top: 100px;
+    left: 50px;
+}
+
+.hero .n-form .pos-4 div i:nth-child(3){
+    top: 70px;
+    right: 20px;
+}
+
+.hero .n-form .pos{
+    position: absolute;
+    background: var(--main-color);
+    height: 45px;
+    width: 170px;
+    border-radius: 17px;
+    top: -20px;
+    right: 0;
+    z-index: -1;
+}
+
+.hero .n-form .pos-2{
+    position: absolute;
+    background: var(--sub-color);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    top: 37px;
+    right: 10px;
+}
+
+.bar{
+    position: absolute;
+    background: var(--bg-color);
+    width: 30px;
+    height: 70px;
+    border-radius: 50px;
+    left: 0;
+}
+
+.bar.a{
+    background: var(--sub-color);
+    bottom: -25px;
+}
+
+.bar.b{
+    background: var(--bg-color);
+    bottom: -45px;
+    left: 30px;
+}
+
+.bar.c{
+    background: var(--sub-color);
+    bottom: -35px;
+    left: 60px;
+}
+
+.bar.d{
+    background: var(--bg-color);
+    bottom: -55px;
+    left: 90px;
+}
+
+.bar.e{
+    background: var(--sub-color);
+    bottom: -25px;
+    left: 120px;
+}
+
+.bar.f{
+    background: var(--bg-color);
+    bottom: -45px;
+    left: 150px;
+}
+
+.bar.g{
+    background: var(--sub-color);
+    bottom: -35px;
+    left: 180px;
+}
+
+.bar.h{
+    background: var(--bg-color);
+    bottom: -55px;
+    left: 210px;
+}
+
+.bar.i{
+    background: var(--sub-color);
+    bottom: -25px;
+    left: 240px;
+}
+
+.bottom{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.social{
+    text-align: center;
+    bottom: -80px;
+    right: 46%;
+}
+
+.social>div{
+    display: flex;
+    margin: 5px 0;
+}
+
+.social>div i{
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: var(--bg-color);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    border-radius: 50%;
+}
+
+.social i:hover{
+    color: var(--main-color);
+    background: var(--bg-color);
+}
+
+.hero .line.b{
+    width: 55%;
+    height: 40px;
+    bottom: -80px;
+    margin: 30px 0 0;
+}
+
+.hero .line.a{
+    transform: rotate(-90deg);
+    right: 180px;
+    bottom: 70px;
+    position: absolute;
+    width: 20%;
+}

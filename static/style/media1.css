@@ -1,0 +1,101 @@
+/* @media only screen and (max-width:991px){
+    nav .container-fluid .logo img{
+        width: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 1250)));
+        height: auto;
+    }
+
+    nav .container-fluid #nav-toggle-btn{
+        visibility: visible;
+    }
+
+    nav .container-fluid .links{
+        width: 100%;
+        position: absolute;
+        display: block;
+        background: var(--head-color);
+        top:25px;
+        left: 0;
+        padding: 0 0 1%;
+        border-radius: 8px;
+        height: fit-content;
+        z-index: -9;
+        padding: 0 3%;
+        opacity: 0;
+        transform: translateY(-5%);
+        transition: 0.5s;
+    }
+
+    nav .container-fluid .links-open{
+        opacity: 1;
+        transform: translateY(5%);
+    }
+    
+    nav .container-fluid .links ul{
+        display: inline;
+        width: 100%;
+    }
+
+    nav .container-fluid .links ul li{
+        border-bottom: var(--l-border);
+        width: 100%;
+        padding: 5px 0;
+    }
+    
+    nav .container-fluid .links ul li a{
+        padding: 10px 8px;
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    nav .container-fluid .links ul li a:hover{
+        background: #1a75fb;
+        color: white;
+    }
+
+    nav .container-fluid .links ul li a:hover{
+        color: white;
+    }
+    
+    nav .container-fluid .links ul li a.active, nav .container-fluid .links ul li a:hover{
+        color: var(--text-color);
+    }
+    
+    nav .container-fluid .links form{
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .web_pop{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width:520px){
+
+    nav .container-fluid .logo img{
+        width: calc(20px + (30 - 20) * ((100vw - 50px) / (1300 - 1250)));
+        height: auto;
+    }
+
+    nav .container-fluid #nav-toggle-btn i{
+        font-size: 25px;
+    }
+
+    nav .container-fluid .links{
+        width: 60%;
+    }
+
+    nav .container-fluid .links{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    nav .container-fluid .links-open-s{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .web_pop{
+        display: none;
+    }
+} */

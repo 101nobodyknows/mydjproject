@@ -1,0 +1,12 @@
+{% extends 'nobodyknows/base.html' %}
+{% load static %}
+{% block content%}
+<h1>Checkout</h1>
+    <p>Order ID: {{ order.id }}</p>
+    <p>Total: {{ order.total }}</p>
+    <ul>
+        {% for order_product in order.orderproduct_set.all %}
+            <li>{{ order_product.product.product_name }} - {{ order_product.quantity }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

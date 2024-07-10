@@ -1,0 +1,26 @@
+.faq{
+    height: 50%;
+}
+.faq_header{
+    background: #f5f5f5;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+}
+
+.active{
+    background: var(--sub-color);
+    color: white;
+}
+
+.faq_body{
+	transition: all .3s ease-in-out;
+  	transform-origin: left top;
+  	transform: scaleY(0);
+    transition: 0.5s;
+    height: 0;
+}
+
+.faq_open{
+    transform: scaleY(1);
+    height: 100%;
+}

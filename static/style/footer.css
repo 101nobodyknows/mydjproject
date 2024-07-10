@@ -1,0 +1,20 @@
+footer{
+    background: url("footerbg.png");
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    margin: 5.5% 0 0;
+    padding: 2.5% 8%;
+    justify-content: space-between;
+}
+
+footer ul li .footer_link{
+    font-size: 15px;
+    color: var(--main-color);
+}
+
+footer ul li.foot-head{
+    font-weight: 600;
+    margin: 0 0 10px;
+    font-size: 16px;
+}

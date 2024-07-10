@@ -1,0 +1,85 @@
+{% extends 'nobodyknows/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card QA_section border-0">
+                <div class="card-body QA_table">
+                    <div class="table-responsive shopping-cart">
+                        {% if cart.products.all %}
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Product</th>
+                                    <th class="border-top-0">Price</th>
+                                    <th class="border-top-0">Quantity</th>
+                                    <th class="border-top-0">Total</th>
+                                    <th class="border-top-0">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cart_product in cart.cartproduct_set.all %}
+                                <tr>
+                                    <td>
+                                        <img src="{{ cart_product.product.product_img.url }}" alt="{{ cart_product.product_name }}" height="50" class="rounded-2">
+                                        &nbsp;
+                                        <p class="d-inline-block align-middle mb-0"><a href="{% url 'product_details' cart_product.product.id %}" class="d-inline-block align-middle mb-0 f_s_16 f_w_600 color_theme2">{{ cart_product.product.product_name }}</a></p>
+                                    </td>
+                                    <td>${{ cart_product.product.product_price }}</td>
+                                    <td>
+                                        <a href="{% url 'update_cart_quantity' cart_product.id 'decrease' %}" class="text-dark fs-6">-</a>&nbsp;
+                                        <span class="text-dark fs-6 p-3">{{ cart_product.quantity }}</span>
+                                        &nbsp;<a href="{% url 'update_cart_quantity' cart_product.id 'increase' %}" class="text-dark fs-6">+</a>
+                                    </td>
+                                    <td>
+                                            {{ item_total_price }}
+                                    </td>
+                                    <td><a href="{% url 'remove_from_cart' cart_product.id %}" class="text-dark"><i class="far fa-times-circle font_s_18"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <p class="fs-4 fw-bold text-dark">Your cart is empty</p>
+                        {% endif %}
+                    </div>
+                    <div class="row justify-content-end mt_30">
+                        <div class="col-md-6">
+                            <div class="total-payment p-3">
+                                <h4 class="header-title">Total Payment</h4>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="payment-title">Subtotal</td>
+                                            <td>${{ total }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="payment-title">Shipping</td>
+                                            <td>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>
+                                                        <div class="radio radio-primary"><input type="radio" name="radio" id="radio_1" value="option_1" checked="checked"> <label class="form-label" for="radio_1">Shipping Charge : $5.00</label></div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="radio radio-primary"><input type="radio" name="radio" id="radio_2" value="option_2"> <label class="form-label" for="radio_2">Express Shipping Charge : $10.00</label></div>
+                                                    </li>
+                                                    <li><a href="#" class="text-dark"><strong>Change Address</strong></a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="payment-title">Total</td>
+                                            <td class="text-dark"><strong>${{ total }}</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

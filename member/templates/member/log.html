@@ -1,0 +1,11 @@
+{% extends 'member/base.html' %}
+{% load static %}
+{% block content%}
+<form action="{% url 'log' %}" method="post">
+  {% csrf_token %}
+    <input type="text" id="emaill" name="username" placeholder="Email"/><br>
+    <div class="pass_word"><input type="password" id="l_psw" name="password" placeholder="Password"/><i class="fa fa-eye" id="s-psw"></i></div>
+    <input type="submit" id="signbtn" value="Log in">
+    <p class="alter">Don't have an account? <a href="{% url 'sign' %}">Sign up</a></p>
+</form>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonlight Anime Merch Member</title>
+    <link rel="stylesheet" href="{% static 'style/member.css' %}">
+    <link rel="stylesheet" href="{% static 'style/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'font/css/all.css' %}">
+</head>
+<body>
+    <a href="{% url 'home' %}" class="backBtn" title="Home"><i class="fa fa-chevron-left"></i></a>
+    <div class="sign_con">
+        <div class="sign_row">
+          <div class="sign_column_1">
+              <div class="overlay"></div>
+                  <p class="main"><b class="main-letter">M</b>oonlight <b class="main-letter">A</b>nime <b class="main-letter"><br>M</b>erch</p>
+              
+          </div>
+          <div class="sign_column_2">
+              <div class="col_2_in">
+                {% if messages %}
+                {% for message in messages %}
+                {% if messages.tags == error %}
+                <p class="errmesg">{{ message|safe }}</p>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                  {% block content %}
+                  {% endblock %}
+              </div>
+            </div>
+        </div>
+      </div>
+    <script>
+        let spsw = document.querySelector("#spsw");			
+        let sspsw = document.querySelector("#scpsw");		
+        let slpsw = document.querySelector("#s-psw");
+        let psw = document.querySelector("#password");
+        let sec_psw = document.querySelector("#sec_psw");
+        let l_psw = document.querySelector("#l_psw");
+
+        sspsw.addEventListener("click", function() {
+            var x = sec_psw;
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        })
+
+        spsw.addEventListener("click", function() {
+            var x = psw;
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        })
+
+        slpsw.addEventListener("click", function() {
+            var x = l_psw;
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        })
+    </script>
+</body>
+</html>

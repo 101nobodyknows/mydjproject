@@ -1,0 +1,59 @@
+nav{
+    width: 100%;
+    padding: 0.8% 5%;
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav>a.logo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 40px;
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li a{
+    padding: 0 15px;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 15px;
+}
+
+nav ul li a:hover{
+    color: var(--sub-color);
+}
+
+nav div button{
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
+    padding: 6px 15px;
+    background: var(--bg-color);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 15px;
+}
+
+nav div button#sign{
+    color: var(--bg-color);
+    background: var(--main-color);
+}
+
+nav div button#sign:hover{
+    color: var(--main-color);
+    background: var(--bg-color);
+}
+
+nav div button#log:hover{
+    color: var(--bg-color);
+    background: var(--main-color);
+}

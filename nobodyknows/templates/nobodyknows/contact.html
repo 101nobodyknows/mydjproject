@@ -1,0 +1,68 @@
+{% extends 'nobodyknows/base.html' %}
+{% load static %}
+{% block content%}
+<div class="con">
+    <img src="{% static 'img(2)/mainbg.png' %}" alt="">
+    <div class="banner">
+        <div>
+            <img src="{% static 'img(2)/play.png' %}" alt="Contact">
+            <h1>CONTACT US</h1>
+            <img src="{% static 'img(2)/play.png' %}" class="rotate" alt="Contact">
+        </div>
+        <p class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+        <p>designed by <a href="http://ayokunnuabiola.liveblog365.com/?i=1" target="_blank" class="text-primary"> <i class="fa fa-heart text-primary"></i> Graphix Prime</p>
+    </div>
+    <div class="hero">
+        <div class="form">
+            <div class="bar a"></div>
+            <div class="bar b"></div>
+            <div class="bar c"></div>
+            <div class="bar d"></div>
+            <div class="bar e"></div>
+            <div class="bar f"></div>
+            <div class="bar g"></div>
+            <div class="bar h"></div>
+            <div class="bar i"></div>
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="Name:" name="name" required><br>
+                <input type="email" placeholder="Email address:" name="email" required><br>
+                <input type="text" placeholder="Subject:" name="subject" required><br>
+                <textarea placeholder="Your message:" name="message" required></textarea><br>
+                <input type="submit" value="SEND MESSAGE">
+            </form>
+        </div>
+        <div class="n-form">
+            <div class="pos"></div>
+            <div class="pos-2"></div>
+            <div class="pos-3">DROP IN OUR OFFICE</div>
+            <div class="pos-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Excepteur sint occaecat cupidatat non proident.</p>
+                <p>CONTACT INFORMATION</p>
+                <p><i class="fa-solid fa-phone"></i>&nbsp;+44 20 7123-4567 <br>Street Address, Number - Village</p>
+                <p><i class="fa-regular fa-envelope"></i>&nbsp;youremail@email.com<br>www.yoursitename.com</p>
+                <div>
+                    <i class="fa fa-location-dot"></i>
+                    <i class="fa fa-location-dot"></i>
+                    <i class="fa fa-location-dot"></i>
+                    <img src="{% static 'img(2)/aquabg.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <img src="{% static 'img(2)/line.png' %}" class="line b " alt="">
+            <div class="social">
+                <p>FOLLOW US</p>
+                <div>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img(2)/line.png' %}" class="line a" alt="">
+    </div>
+</div>
+{% endblock %}

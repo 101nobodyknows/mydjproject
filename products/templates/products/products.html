@@ -1,0 +1,74 @@
+{% extends 'nobodyknows/base.html' %}
+{% load static %}
+{% block content%}
+<div class="container my-lg-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="serach_field_2 w-100 my-5">
+        <div class="search_inner">
+            <form id="autoSearch" action="{% url 'product' %}" method="get">
+                <div class="search_field">
+                    <input type="text" name="query" value="{{ query }}" placeholder="Search">
+                </div>
+                <button type="submit"><i class="ti-search"></i></button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="row">
+        {% for product in product_list %}
+        <div class="col-md-4">
+        <div class="white_card position-relative mb_20 ">
+        <div class="card-body">
+        <div class="ribbon1 rib1-primary">
+          <span class="text-white text-center rib1-primary">
+            {% with product.product_quantity as quantity %}
+              {% if quantity >= 13 %}
+                In Stock
+              {% elif quantity > 5 %}
+                Few units left
+              {% else %}
+                {{quantity}} unit{% if quantity > 1 %}s{% endif %} left
+              {% endif %}
+            {% endwith %}
+          </span>
+        </div>
+        <a href="{% url 'product_details' product.id %}">
+          <img src="{{ product.product_img.url }}" alt class="d-block mx-auto my-4 hover-zoom" height="150">
+        </a>
+        <div class="row my-4">
+        <div class="col">
+          <span class="badge_btn_1  mb-1">{{product.product_category}}</span>
+          <a href="{% url 'product_details' product.id %}" class="f_w_600 color_text_3 f_s_17 d-block">{{product.product_name}}</a>
+        </div>
+        <div class="col-auto text-lg-end">
+        <h4 class="text-dark mt-0 px-2 f_s_16">${{product.product_price}}</h4>
+        <div class="">
+          <ul class="list-inline mb-0 product-review d-flex align-self-center px-2">
+            {% with product.product_rating as rating %}
+              {% for i in "xxxxx" %}
+                {% if forloop.counter <= rating %}
+                <li class="list-inline-item"><i class="fas fa-star text-warning font-16"></i></li>
+                {% else %}
+                <li class="list-inline-item"><i class="fa-regular fa-star text-warning font-16"></i></li>
+                {% endif %}
+              {% endfor %}
+            {% endwith %}
+          </ul>
+        </div>
+        </div>
+        </div>
+        <div class="d-grid">
+        <a href="{% url 'add_to_cart' product.id %}" class="btn_2 btn">Add To Cart</a>
+        </div>
+        </div>
+        
+        </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
