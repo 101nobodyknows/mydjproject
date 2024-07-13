@@ -3,9 +3,14 @@
 {% block content%}
 <form action="{% url 'log' %}" method="post">
   {% csrf_token %}
-    <input type="text" id="emaill" name="username" placeholder="Email"/><br>
-    <div class="pass_word"><input type="password" id="l_psw" name="password" placeholder="Password"/><i class="fa fa-eye" id="s-psw"></i></div>
-    <input type="submit" id="signbtn" value="Log in">
-    <p class="alter">Don't have an account? <a href="{% url 'sign' %}">Sign up</a></p>
+  <h3>Log In</h3>
+  <div class="form-row" style="display: block; padding: 0 5%;">
+      <input type="text" class="form-control" style="width: 100%;" placeholder="Username"  name="username">
+      <input type="password" class="form-control" style="width: 100%; margin-top: 10px;" placeholder="Password"  name="password">
+  </div>
+  <button type="submit">Log In
+  <i class="fa fa-arrow-right"></i>
+  </button>
+  <p style="margin: 30px 0; text-align: center; font-size: 13px;">Don't have an account? <a href="{% url 'sign' %}">Sign Up</a></p>
 </form>
 {% endblock %}

@@ -1,26 +1,29 @@
 {% extends 'member/base.html' %}
 {% load static %}
 {% block content%}
-<form action="{% url 'sign' %}" enctype="multipart/form-data" method="post">
+<form action="{% url 'sign' %}" method="post">
   {% csrf_token %}
-  <div class="socials">
-    <p>Sign up with:</p>
-    <div>
-    <i class="fa-brands fa-google"></i>
-    <i class="fa-brands fa-facebook-f"></i>
-    <i class="fa-brands fa-twitter"></i>
+  <h3>Sign Up</h3>
+  <div class="form-row">
+    <input type="text" class="form-control" placeholder="First Name" name="first_name">
+    <input type="text" class="form-control" placeholder="Last Name" name="last_name">
   </div>
+  <div class="form-row">
+      <input type="text" class="form-control" placeholder="Username"  name="username">
+      <input type="text" class="form-control" placeholder="Email" name="email">
   </div>
-  <p>Or create an account withn us:</p>
-  <input type="text" name="first_name" placeholder="First name" required><br>
-  <input type="text" name="last_name" placeholder="Last name" required><br>
-  <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email" required><br>
-  <input type="text" id="uname" name="username" placeholder="Username" required><br>
-  <input type="text" id="phone_no" name="phone_number" placeholder="Phone No." required><br>
-  <div class="pass_word"><input type="password" id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*?#&]{8,}" placeholder="Password" required><i class="fa fa-eye" id="spsw"></i></div>
-  <div class="pass_word"><input type="password" id="sec_psw" name="confirm_password" placeholder="Confirm Password" required><i class="fa fa-eye" id="scpsw"></i></div>
-  <div><label style="cursor: pointer;" for="upload_p_img">Add profile picture</label><input style="display: none;" name="profile_img" type="file" id="upload_p_img"></div>
-  <input type="submit" id="signbtn" value="Sign Up">
-  <p class="alter">Have an account? <a href="{% url 'log' %}">Log in</a></p>
+  <div class="form-row">
+      <input type="password" class="form-control" placeholder="Password"  name="password">
+      <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
+  </div>
+  <div class="form-row">
+      <input type="text" class="form-control" placeholder="Contact No." name="phone_number">
+      <label for="uploadImg" class="form-control" style="padding: 12px;" style="cursor: pointer;">Add Profile Image</label>
+      <input type="file" name="profile_img" id="uploadImg" style="display: none;">
+  </div>
+  <button type="submit">Sign Up
+  <i class="fa fa-arrow-right"></i>
+  </button>
+  <p style="margin: 30px 0; text-align: center; font-size: 13px;">Have an account? <a href="{% url 'log' %}">Log in</a></p>
 </form>
 {% endblock %}
